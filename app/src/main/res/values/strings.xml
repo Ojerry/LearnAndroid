@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Learn Android</string>
+    <string name="getStarted">Get Started</string>
+    <string name="next">Next</string>
 </resources>
