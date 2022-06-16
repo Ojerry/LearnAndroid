@@ -5,10 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".TopicsFragment">
 
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
    <androidx.recyclerview.widget.RecyclerView
        android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+       android:layout_height="match_parent"
+       tools:listitem="@layout/topic_item"
+       android:id="@+id/recyclerVeiw"
+       />
 
-
+   </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
