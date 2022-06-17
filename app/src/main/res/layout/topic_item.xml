@@ -1,48 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp"
-    android:layout_marginHorizontal="8dp"
-    android:background="@color/white"
-    android:foreground="?android:attr/selectableItemBackground">
+    android:layout_margin="4dp"
+    android:background="#AC8888"
+    android:orientation="vertical">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/topic_image"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="14dp"
         android:adjustViewBounds="true"
+        android:paddingTop="8dp"
         android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/le1"
 
         />
 
     <TextView
         android:id="@+id/tvHeading"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="Learn all the android you want"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/topic_image"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="serif-monospace"
+        android:text="Learn all the android you want"
+        android:textAlignment="viewStart"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
 
     <View
+        android:id="@+id/underline"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_margin="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topic_image"
-        android:background="@color/underline"/>
+        android:background="@color/underline" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

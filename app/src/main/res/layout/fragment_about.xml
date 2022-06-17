@@ -51,7 +51,7 @@
                 android:id="@+id/details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/contactDetails"
+                android:text="@string/aboutDetails"
                 android:textColor="?android:textColorPrimary"
                 android:lineHeight="24dp"
                 android:textSize="18sp"

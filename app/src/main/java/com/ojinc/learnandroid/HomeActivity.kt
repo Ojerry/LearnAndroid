@@ -19,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var newRecyclerView: RecyclerView
     private lateinit var  newArrayList: ArrayList<Topics>
-    lateinit var imageId : Array<Int>
+    lateinit var topicImage : Array<Int>
     lateinit var heading : Array<String>
     lateinit var details : Array<String>
     private var isLinearLayoutManager = true
@@ -29,49 +29,49 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        imageId = arrayOf(
-            R.drawable.le1,
-            R.drawable.le1,
-            R.drawable.le1,
-            R.drawable.le1,
-            R.drawable.le1,
-            R.drawable.le1,
-            R.drawable.le1,
-            R.drawable.le1,
-            R.drawable.le1,
-            R.drawable.le1,
-            R.drawable.le1,
-            R.drawable.le1
+        topicImage = arrayOf(
+            R.drawable.theroadmap,
+            R.drawable.kotlinjava,
+            R.drawable.versioncontrol,
+            R.drawable.github,
+            R.drawable.ide,
+            R.drawable.views,
+            R.drawable.activities,
+            R.drawable.fragments,
+            R.drawable.dataalgorithms,
+            R.drawable.uidesigns,
+            R.drawable.gradle,
+            R.drawable.keeplearning
         )
 
         heading = arrayOf(
-            "Learn Android",
-            "Learn Android",
-            "Learn Android",
-            "Learn Android",
-            "Learn Android",
-            "Learn Android",
-            "Learn Android",
-            "Learn Android",
-            "Learn Android",
-            "Learn Android",
-            "Learn Android",
-            "Learn Android"
+            "Android RoadMap",
+            "Kotlin or Java",
+            "Version Control",
+            "GitHub",
+            "Integrated Development Environment",
+            "Views",
+            "Activities",
+            "Fragments",
+            "Data Structures and Algorithm",
+            "UI Designs",
+            "Gradle",
+            "Keep Learning"
         )
 
         details = arrayOf(
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails),
-            getString(R.string.contactDetails)
+            getString(R.string.roadmap),
+            getString(R.string.kotlinorjava),
+            getString(R.string.vControl),
+            getString(R.string.github),
+            getString(R.string.ide),
+            getString(R.string.views),
+            getString(R.string.activities),
+            getString(R.string.fragments),
+            getString(R.string.dataalgorithms),
+            getString(R.string.uidesigns),
+            getString(R.string.gradle),
+            getString(R.string.keeplearning)
         )
 
         newRecyclerView = findViewById(R.id.recyclerVeiw)
@@ -85,8 +85,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun getUserData() {
-        for(i in imageId.indices) {
-            val topics = Topics(imageId[i], heading[i])
+        for(i in topicImage.indices) {
+            val topics = Topics(topicImage[i], heading[i])
             newArrayList.add(topics)
         }
 
@@ -106,7 +106,7 @@ class HomeActivity : AppCompatActivity() {
                 fragmentManager.findFragmentByTag(TopicsFragment::class.java.simpleName)
                 val mBundle = Bundle()
                 mBundle.putString("heading", newArrayList[position].heading)
-                mBundle.putInt("imageId", newArrayList[position].topicImage)
+                mBundle.putInt("topicImage", newArrayList[position].topicImage)
                 mBundle.putString("details", details[position])
                 mFragment.arguments = mBundle
                 fragmentTransaction.add(R.id.fragmentContainer, mFragment, TopicsFragment::class.java.simpleName).addToBackStack(null).commitAllowingStateLoss()

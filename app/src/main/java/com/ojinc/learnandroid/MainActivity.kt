@@ -42,9 +42,9 @@ class MainActivity : AppCompatActivity() {
         next = findViewById(R.id.next)
 
         val onBoardingData:MutableList<onBoardingData> = ArrayList()
-        onBoardingData.add(onBoardingData("Intense Learning", "Learn all you need to get started with android", R.drawable.le1))
+        onBoardingData.add(onBoardingData("Intense Learning", "Learn all the fundamentals you need to get started with android", R.drawable.le1))
         onBoardingData.add(onBoardingData("Skyrocket Your Skills", "Boost your Ranking on any android skill test", R.drawable.le2))
-        onBoardingData.add(onBoardingData("Fix Those Bugs", "Become a problem solving machine", R.drawable.le3))
+        onBoardingData.add(onBoardingData("Fix Those Bugs", "Become a problem solving machine, and make a lot of money", R.drawable.le3))
 
         setOnBoardingViewPagerAdapter(onBoardingData)
 
