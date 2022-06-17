@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TopicsFragment">
+    tools:context=".TopicsFragment"
+    >
+   <TextView
+       android:id="@+id/heading"
+       android:elevation="16dp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:padding="16dp"
+       android:text="Learn Android"
+       android:textColor="?android:textColorPrimary"
+       android:textSize="26dp"
+       android:textStyle="bold"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"/>
 
-   <androidx.constraintlayout.widget.ConstraintLayout
+   <ScrollView
        android:layout_width="match_parent"
-       android:layout_height="match_parent">
+       android:layout_height="0dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/heading">
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       tools:listitem="@layout/topic_item"
-       android:id="@+id/recyclerVeiw"
-       />
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
 
-   </androidx.constraintlayout.widget.ConstraintLayout>
+         <ImageView
+             android:id="@+id/topicImage"
+             android:layout_width="wrap_content"
+             android:layout_height="300dp"
+             android:scaleType="centerCrop"
+             app:layout_constraintHorizontal_bias="0.5"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             app:srcCompat="@drawable/le1"
+             />
 
-</FrameLayout>
+         <TextView
+             android:id="@+id/details"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/contactDetails"
+             android:textColor="?android:textColorPrimary"
+             android:lineHeight="24dp"
+             android:textSize="18sp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.5"
+             android:paddingHorizontal="16dp"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/topicImage"/>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
