@@ -94,11 +94,7 @@ class HomeActivity : AppCompatActivity() {
         newRecyclerView.adapter = adapter
         adapter.setOnItemClickListener(object : TopicsAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-//                val intent = Intent(this@HomeActivity, HomeActivity::class.java)
-//                intent.putExtra("heading",newArrayList[position].heading)
-//                intent.putExtra("imageId",newArrayList[position].topicImage)
-//                intent.putExtra("details",details[position])
-//                startActivity(intent)
+
                 val fragmentManager = supportFragmentManager
                 val fragmentTransaction = fragmentManager.beginTransaction()
                 val mFragment = TopicsFragment()
@@ -110,13 +106,8 @@ class HomeActivity : AppCompatActivity() {
                 mBundle.putString("details", details[position])
                 mFragment.arguments = mBundle
                 fragmentTransaction.add(R.id.fragmentContainer, mFragment, TopicsFragment::class.java.simpleName).addToBackStack(null).commitAllowingStateLoss()
-//                fragmentTransaction.replace(R.id.fragmentContainer, mFragment).addToBackStack(null).commit()
-//                fragmentTransaction.replace(R.id.fragmentContainer, mFragment).commit()
                 val view : View = findViewById(R.id.recyclerVeiw)
                 view.visibility = View.GONE
-
-
-
             }
         })
 
@@ -125,18 +116,12 @@ class HomeActivity : AppCompatActivity() {
     override fun onBackPressed()
     {
         val fragmentManager = supportFragmentManager
-//        val fragmentTransaction = fragmentManager.beginTransaction()
-//        val mFragment = DetailFragment()
         val currentFragment =this@HomeActivity.supportFragmentManager.findFragmentById(R.id.fragmentContainer)
         if(currentFragment is TopicsFragment)
         {
-//            Toast.makeText(this, "There", Toast.LENGTH_SHORT).show()
-
             fragmentManager.popBackStack()
-
             val view : View = findViewById(R.id.recyclerVeiw)
             view.visibility = View.VISIBLE
-//                fragmentTransaction.remove(DetailFragment()).commit()
         }
         else if(currentFragment is AboutFragment){
             fragmentManager.popBackStack()
@@ -144,7 +129,6 @@ class HomeActivity : AppCompatActivity() {
             view.visibility = View.VISIBLE
         } else if(currentFragment is ContactFragment) {
             fragmentManager.popBackStack()
-
             val view : View = findViewById(R.id.recyclerVeiw)
             view.visibility = View.VISIBLE
         }
@@ -158,11 +142,8 @@ class HomeActivity : AppCompatActivity() {
             newRecyclerView.layoutManager = LinearLayoutManager(this)
         } else{
             newRecyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-//                GridLayoutManager(this, 2)
         }
     }
-
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.nav_menu, menu)
@@ -178,8 +159,6 @@ class HomeActivity : AppCompatActivity() {
                fragmentManager.popBackStack()
                fragmentManager.findFragmentByTag(ContactFragment::class.java.simpleName)
                fragmentTransaction.add(R.id.fragmentContainer, cFragment, ContactFragment::class.java.simpleName).addToBackStack(null).commitAllowingStateLoss()
-
-//               replaceFragment(ContactFragment())
                val view : View = findViewById(R.id.recyclerVeiw)
                view.visibility = View.GONE
            }
@@ -190,9 +169,6 @@ class HomeActivity : AppCompatActivity() {
                fragmentManager.popBackStack()
                fragmentManager.findFragmentByTag(ContactFragment::class.java.simpleName)
                fragmentTransaction.add(R.id.fragmentContainer, aFragment, AboutFragment::class.java.simpleName).addToBackStack(null).commitAllowingStateLoss()
-
-
-//               replaceFragment(AboutFragment())
                val view : View = findViewById(R.id.recyclerVeiw)
                view.visibility = View.GONE
            }
@@ -200,27 +176,7 @@ class HomeActivity : AppCompatActivity() {
                isLinearLayoutManager = !isLinearLayoutManager
                chooseLayout()
            }
-
-
        }
-
         return super.onOptionsItemSelected(item)
     }
-
-//    private fun replaceFragment(fragment: Fragment) {
-//        val fragmentManager = supportFragmentManager
-//        val fragmentTransaction = fragmentManager.beginTransaction()
-////        val aFragment = AboutFragment()
-////        val cFragment = ContactFragment()
-//        fragmentTransaction.replace(R.id.fragmentContainer, fragment)
-////        fragmentTransaction.add(R.id.fragmentContainer, mFragment, TopicsFragment::class.java.simpleName).addToBackStack(null).commitAllowingStateLoss()
-//
-//        fragmentTransaction.commit()
-//    }
-
-
-
-
-
-
 }
