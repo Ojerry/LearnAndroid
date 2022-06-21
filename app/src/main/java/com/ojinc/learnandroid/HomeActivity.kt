@@ -175,6 +175,7 @@ class HomeActivity : AppCompatActivity() {
                val fragmentManager = supportFragmentManager
                val fragmentTransaction = fragmentManager.beginTransaction()
                val cFragment = ContactFragment()
+               fragmentManager.popBackStack()
                fragmentManager.findFragmentByTag(ContactFragment::class.java.simpleName)
                fragmentTransaction.add(R.id.fragmentContainer, cFragment, ContactFragment::class.java.simpleName).addToBackStack(null).commitAllowingStateLoss()
 
@@ -186,6 +187,7 @@ class HomeActivity : AppCompatActivity() {
                val fragmentManager = supportFragmentManager
                val fragmentTransaction = fragmentManager.beginTransaction()
                val aFragment = AboutFragment()
+               fragmentManager.popBackStack()
                fragmentManager.findFragmentByTag(ContactFragment::class.java.simpleName)
                fragmentTransaction.add(R.id.fragmentContainer, aFragment, AboutFragment::class.java.simpleName).addToBackStack(null).commitAllowingStateLoss()
 

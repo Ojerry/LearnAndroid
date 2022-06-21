@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_margin="8dp"
     android:background="#AC8888"
     android:orientation="vertical">
 
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/poppins"
         android:text="Learn all the android you want"
         android:textAlignment="viewStart"
         android:textColor="?android:textColorPrimary"
